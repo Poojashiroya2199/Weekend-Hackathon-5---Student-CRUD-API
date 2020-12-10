@@ -40,7 +40,7 @@ app.put("/api/student/:id", (req, res) => {
   const id = req.params.id;
   const student = data.find((el) => el.id === parseInt(id));
   if (!student) {
-    res.status(404).send("Error");
+    res.status(400).send("Error");
   }
   const studentIndex = data.findIndex((student) => student.id === parseInt(id));
   const newstudent = {
